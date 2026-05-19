@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Generated",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": -150, "left": 100, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 150, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 100, "left": 200, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": 200, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -100, "left": -200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 0, "left": -200, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd:SDA", "esp:9", "green", [ "v0" ] ],
+    [ "lcd:SCL", "esp:8", "blue", [ "v0" ] ],
+    [ "lcd:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "lcd:GND", "esp:GND", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:21", "green", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:4", "green", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND", "black", [ "v0" ] ],
+    [ "pot2:SIG", "esp:5", "green", [ "v0" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot2:GND", "esp:GND", "black", [ "v0" ] ],
+    [ "servo1:PWM", "esp:20", "green", [ "v0" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "v0" ] ],
+    [ "servo1:GND", "esp:GND", "black", [ "v0" ] ],
+    [ "servo2:PWM", "esp:26", "green", [ "v0" ] ],
+    [ "servo2:V+", "esp:5V", "red", [ "v0" ] ],
+    [ "servo2:GND", "esp:GND", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
